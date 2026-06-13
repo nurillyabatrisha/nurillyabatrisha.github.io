@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurillya Batrisha | MediKita Cheerful e-Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --neon-teal: #14b8a6;
+            --neon-pink: #f43f5e;
+            --mint-light: #f0fdfa;
+            --lavender-light: #faf5ff;
+        }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: linear-gradient(135deg, var(--mint-light) 0%, #ffffff 50%, var(--lavender-light) 100%);
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .serif-heading {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Glassmorphic Navigation with Soft Shadow */
+        .nav-cheerful {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid rgba(20, 184, 166, 0.15);
+            box-shadow: 0 4px 30px rgba(20, 184, 166, 0.05);
+        }
+
+        /* Dynamic Neon Glow Glass Cards */
+        .glow-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(20, 184, 166, 0.15);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glow-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--neon-teal);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05), 
+                        0 0 25px rgba(20, 184, 166, 0.25),
+                        0 0 10px rgba(244, 63, 94, 0.1);
+        }
+
+        /* Search Filter Target Transitions */
+        .searchable-item {
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), display 0.4s;
+        }
+
+        /* Video Neon Container and Dynamic Micro-Interaction */
+        .video-neon-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            border-radius: 1.5rem;
+            background: #ffffff;
+            border: 2px solid rgba(20, 184, 166, 0.2);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glow-card:hover .video-neon-container {
+            border-color: var(--neon-pink);
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.2);
+        }
+
+        .video-neon-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Dynamic Neon Text Accents */
+        .neon-glow-teal {
+            text-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
+        }
+
+        .neon-glow-pink {
+            text-shadow: 0 0 10px rgba(244, 63, 94, 0.3);
+        }
+
+        /* Animated Floating Avatar Frame */
+        .avatar-cheerful-frame {
+            position: relative;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph-avatar 10s ease-in-out infinite alternate;
+            box-shadow: 0 15px 40px rgba(20, 184, 166, 0.15), inset 0 0 20px rgba(20, 184, 166, 0.1);
+            border: 4px solid rgba(20, 184, 166, 0.3);
+        }
+
+        @keyframes morph-avatar {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 40% 60% 70% 30% / 50% 60% 30% 60%; border-color: var(--neon-pink); }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* Cheerful Ambient Rotating Shapes */
+        .ambient-glow-1 {
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%);
+            animation: float-slow 20s infinite alternate;
+        }
+
+        .ambient-glow-2 {
+            background: radial-gradient(circle, rgba(244, 63, 94, 0.1) 0%, transparent 70%);
+            animation: float-slow-reverse 25s infinite alternate;
+        }
+
+        @keyframes float-slow {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 30px) scale(1.2); }
+        }
+
+        @keyframes float-slow-reverse {
+            0% { transform: translate(0, 0) scale(1.2); }
+            100% { transform: translate(-40px, -50px) scale(0.9); }
+        }
+
+        /* ECG Heartbeat Line Dynamic Wave */
+        .ecg-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw-ecg 12s linear infinite;
+        }
+
+        @keyframes draw-ecg {
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Hide scrollbar for mobile navigation */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased relative">
+
+    <!-- Background Decorators -->
+    <div class="absolute top-20 left-10 w-96 h-96 ambient-glow-1 rounded-full pointer-events-none z-0"></div>
+    <div class="absolute top-1/2 right-10 w-[500px] h-[500px] ambient-glow-2 rounded-full pointer-events-none z-0"></div>
+
+    <!-- Heartbeat Dynamic SVG Wave Overlay -->
+    <div class="absolute top-0 right-0 left-0 h-48 opacity-20 pointer-events-none z-0 overflow-hidden">
+        <svg class="w-full h-full" viewBox="0 0 1400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="ecg-line" d="M0 100 L500 100 L515 80 L525 120 L535 40 L550 160 L560 100 L575 110 L585 100 L1400 100" stroke="#14b8a6" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-cheerful fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-auto sm:h-24 py-4 sm:py-0 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3 shrink-0">
+                <div class="w-3.5 h-3.5 bg-rose-500 rounded-full animate-ping"></div>
+                <span class="font-extrabold text-xs sm:text-sm tracking-[0.3em] uppercase text-slate-900">
+                    MediKita <span class="text-teal-600 font-light">E-PORTFOLIO</span>
+                </span>
+            </div>
+            
+            <!-- Highly Clickable, Always Visible Navigation Links matching reference image -->
+            <div class="flex items-center w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0 hide-scrollbar">
+                <div class="flex gap-5 sm:gap-8 lg:gap-12 text-[12px] sm:text-[14px] font-extrabold uppercase tracking-widest text-slate-900 mx-auto sm:mx-0 whitespace-nowrap">
+                    <a href="#home" class="py-2 px-1 hover:text-teal-600 transition-colors cursor-pointer">Home</a>
+                    <a href="#labs" class="py-2 px-1 hover:text-teal-600 transition-colors cursor-pointer">Labs</a>
+                    <a href="#projects" class="py-2 px-1 hover:text-teal-600 transition-colors cursor-pointer">Projects</a>
+                    <a href="#reflection" class="py-2 px-1 hover:text-teal-600 transition-colors cursor-pointer">Reflection</a>
+                    <a href="#skills" class="py-2 px-1 hover:text-teal-600 transition-colors cursor-pointer">Skills</a>
+                    <a href="#resources" class="py-2 px-1 hover:text-teal-600 transition-colors cursor-pointer">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header id="home" class="pt-48 pb-32 px-8 relative overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+            
+            <!-- Left Info Panel -->
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-50 text-teal-800 text-[10px] font-bold tracking-widest uppercase border border-teal-100 shadow-[0_0_15px_rgba(20,184,166,0.15)] animate-bounce">
+                    ✨ TM2213 • Mobile Application Programming
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-normal tracking-tight text-slate-900 leading-[1.15]">
+                    <span class="serif-heading italic block text-teal-600 font-light mb-2 neon-glow-teal">Designing for Wellness,</span>
+                    NURILLYA BATRISHA BINTI AHMAD YUSOF
+                </h1>
+                
+                <p class="text-base text-slate-500 font-normal leading-relaxed max-w-xl">
+                    MediKita is a smart healthcare companion application developed independently to bridge the gap between patient medication adherence, emergency medical access, and peer support. Built using modern Android architecture, the app integrates local data persistence, real-time cloud computing, and physical hardware sensors to deliver a reliable, seamless medical ecosystem on a single mobile device. It is designed to empower users to take control of their health journeys while simplifying communication with localized healthcare providers and communities.
+                </p>
+
+                <!-- Academic Metadata Grid -->
+                <div class="grid sm:grid-cols-3 gap-4 pt-2">
+                    <div class="p-5 bg-white rounded-2xl border border-teal-100 shadow-sm transition-all hover:scale-105">
+                        <span class="block text-[9px] font-bold text-teal-600 uppercase tracking-widest mb-1">Matric Registration</span>
+                        <p class="font-semibold text-slate-800 text-sm">A211095</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border border-teal-100 shadow-sm transition-all hover:scale-105">
+                        <span class="block text-[9px] font-bold text-teal-600 uppercase tracking-widest mb-1">Programme Major</span>
+                        <p class="font-semibold text-slate-800 text-sm">INFORMATION TECHNOLOGY</p>
+                    </div>
+                    <div class="p-5 bg-white rounded-2xl border border-teal-100 shadow-sm transition-all hover:scale-105">
+                        <span class="block text-[9px] font-bold text-teal-600 uppercase tracking-widest mb-1">Course Mentor</span>
+                        <p class="font-semibold text-slate-800 text-sm">DR. NAZATUL AINI</p>
+                    </div>
+                </div>
+
+                <!-- SDG Commitment Frame with Neon Outline -->
+                <div class="p-6 bg-gradient-to-r from-teal-50 to-teal-100/50 text-teal-950 rounded-3xl flex items-start gap-5 shadow-[0_0_20px_rgba(20,184,166,0.15)] border border-teal-300">
+                    <span class="text-3xl animate-pulse">❤️</span>
+                    <div class="space-y-1">
+                        <h4 class="text-xs font-bold tracking-widest text-teal-700 uppercase">Sustainable Development Goal Commitment</h4>
+                        <p class="text-sm font-medium italic text-teal-900">
+                            <strong>SDG Goal 3: Good Health and Well-being</strong>, because MediKita directly promotes healthy lives and well-being for all ages by eliminating critical healthcare roadblocks such as patient isolation, medical non-compliance, and delayed access to emergency services during critical moments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Profile Photo Canvas -->
+            <div class="lg:col-span-5 flex justify-center items-center relative">
+                <!-- Outer Aesthetic HUD Ring -->
+                <div class="absolute w-80 h-80 border-2 border-dashed border-teal-400/30 rounded-full animate-[spin_40s_linear_infinite]"></div>
+                <div class="absolute w-88 h-88 border border-double border-pink-400/20 rounded-full animate-[spin_60s_linear_infinite]"></div>
+                
+                <!-- Masked Wave Frame for Picture -->
+                <div class="relative w-72 h-96 bg-gradient-to-tr from-teal-50 to-purple-50 shadow-2xl overflow-hidden avatar-cheerful-frame border-[12px] border-white">
+                    <img src="profile.jpg.jpeg" class="w-full h-full object-cover object-center" style="object-position: center 20%;" alt="Nurillya Batrisha" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Elegant Fallback Illustration if local img is missing initially -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center bg-teal-50 text-teal-600 hidden">
+                        <span class="text-5xl mb-2">👩‍💻</span>
+                        <span class="text-xs font-semibold tracking-wider uppercase">Photo Placeholder</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-teal-950/10 to-transparent"></div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Labs Section -->
+    <section id="labs" class="py-32 border-y border-slate-100 bg-white px-8 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 space-y-2">
+                <span class="text-teal-600 text-xs font-bold tracking-[0.3em] uppercase block">Laboratory Milestones</span>
+                <h2 class="text-4xl font-normal text-slate-900 tracking-tight serif-heading italic">Modular Development Logs</h2>
+            </div>
+
+            <!-- "No search results" feedback label -->
+            <div id="labs-no-results" class="hidden text-center py-12 bg-teal-50/20 border border-dashed border-teal-200 rounded-3xl max-w-lg mx-auto">
+                <span class="text-3xl">🔍</span>
+                <p class="mt-2 text-sm font-semibold text-slate-500">No laboratory milestones match your query.</p>
+            </div>
+
+            <div id="labs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Lab 1 -->
+                <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
+                    <a href="https://youtu.be/VBT-R0lOq8M" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
+                        <img src="https://img.youtube.com/vi/VBT-R0lOq8M/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/VBT-R0lOq8M/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 1 Video Thumbnail">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] group-hover:scale-125 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </a>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-teal-600 tracking-wider uppercase block">Milestone 01</span>
+                        <h3 class="text-lg font-bold text-slate-800">Lab 1: UI & Layout Foundations</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Designed the initial user interface for MediKita using Jetpack Compose layouts like Columns, Rows, and Boxes. I learned how to structure basic medical dashboards and patient profile views with composable components.</p>
+                    </div>
+                    <div class="p-4 bg-teal-50/50 rounded-xl text-xs font-medium italic text-teal-900 border-l-2 border-teal-500">
+                        "Mastering modifiers for padding and alignment allowed me to create a clean, organized visual base for our health app."
+                    </div>
+                </div>
+
+                <!-- Lab 2 -->
+                <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
+                    <a href="https://youtu.be/UY7NxuOAV1g" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
+                        <img src="https://img.youtube.com/vi/UY7NxuOAV1g/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/UY7NxuOAV1g/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 2 Video Thumbnail">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] group-hover:scale-125 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </a>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-teal-600 tracking-wider uppercase block">Milestone 02</span>
+                        <h3 class="text-lg font-bold text-slate-800">Lab 2: Dynamic State & Interaction</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">This lab focused on making MediKita dynamic by managing state with remember and mutableStateOf. I implemented interactive elements like medical symptom checkboxes, health metric input forms, and clickable appointment buttons.</p>
+                    </div>
+                    <div class="p-4 bg-teal-50/50 rounded-xl text-xs font-medium italic text-teal-900 border-l-2 border-teal-500">
+                        "This taught me how Compose handles state recomposition to update UI elements instantly based on patient inputs."
+                    </div>
+                </div>
+
+                <!-- Lab 3 -->
+                <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
+                    <a href="https://youtu.be/X-PWPv2SKFg" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
+                        <img src="https://img.youtube.com/vi/X-PWPv2SKFg/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/X-PWPv2SKFg/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 3 Video Thumbnail">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] group-hover:scale-125 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </a>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-teal-600 tracking-wider uppercase block">Milestone 03</span>
+                        <h3 class="text-lg font-bold text-slate-800">Lab 3: Material Design 3 Integration</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">I enhanced MediKita’s visual identity by applying Material Design 3 guidelines to establish a trustworthy healthcare color scheme, typography, and shape system.</p>
+                    </div>
+                    <div class="p-4 bg-teal-50/50 rounded-xl text-xs font-medium italic text-teal-900 border-l-2 border-teal-500">
+                        "I integrated polished UI components such as TopAppBar, FloatingActionButton, and modern elevated cards to display medical alerts. This significantly elevated the application’s professionalism."
+                    </div>
+                </div>
+
+                <!-- Lab 4 -->
+                <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
+                    <a href="https://youtu.be/A0mB-LODLVs" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
+                        <img src="https://img.youtube.com/vi/A0mB-LODLVs/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/A0mB-LODLVs/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 4 Video Thumbnail">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] group-hover:scale-125 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </a>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-teal-600 tracking-wider uppercase block">Milestone 04</span>
+                        <h3 class="text-lg font-bold text-slate-800">Lab 4: Intent & Navigation Architectures</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">In Lab 4, I implemented robust navigation within MediKita using NavHost and NavController. I structured a clear navigation flow that seamlessly routes patients from the welcome screen to vital dashboards.</p>
+                    </div>
+                    <div class="p-4 bg-teal-50/50 rounded-xl text-xs font-medium italic text-teal-900 border-l-2 border-teal-500">
+                        "This experience taught me how to securely pass medical data and arguments between composable screens while maintaining a healthy back-stack."
+                    </div>
+                </div>
+
+                <!-- Lab 5 -->
+                <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
+                    <a href="https://youtu.be/mFVn26Z94yo" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
+                        <img src="https://img.youtube.com/vi/mFVn26Z94yo/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/mFVn26Z94yo/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 5 Video Thumbnail">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] group-hover:scale-125 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </a>
+                    <div class="space-y-2">
+                        <span class="text-[9px] font-bold text-teal-600 tracking-wider uppercase block">Milestone 05</span>
+                        <h3 class="text-lg font-bold text-slate-800">Lab 5: Offline Persistence via Room</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">This lab introduced local data persistence to MediKita by integrating the SQLite-based Room Database. I built safe database entities, DAOs, and repositories to locally store patient records.</p>
+                    </div>
+                    <div class="p-4 bg-teal-50/50 rounded-xl text-xs font-medium italic text-teal-900 border-l-2 border-teal-500">
+                        "Connecting this offline database with Compose UI using state flows ensures patient information remains accessible even without network connectivity."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-8 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-24 text-center space-y-2">
+                <span class="text-teal-600 text-xs font-bold tracking-[0.3em] uppercase block">Engineering Productions</span>
+                <h2 class="text-4xl font-normal text-slate-900 tracking-tight serif-heading italic">MediKita System Milestones</h2>
+            </div>
+
+            <!-- "No search results" feedback label -->
+            <div id="projects-no-results" class="hidden text-center py-12 bg-teal-50/20 border border-dashed border-teal-200 rounded-3xl max-w-lg mx-auto mb-8">
+                <span class="text-3xl">🔍</span>
+                <p class="mt-2 text-sm font-semibold text-slate-500">No project implementations match your query.</p>
+            </div>
+
+            <div id="projects-container" class="space-y-16">
+                <!-- Project 1 -->
+                <div class="searchable-item grid lg:grid-cols-12 gap-12 items-center bg-white p-10 md:p-12 rounded-[2.5rem] border border-teal-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(20,184,166,0.15)] transition-all duration-500">
+                    <div class="lg:col-span-6">
+                        <a href="https://youtu.be/Q3EZ492OPew" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
+                            <img src="https://img.youtube.com/vi/Q3EZ492OPew/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/Q3EZ492OPew/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Project 1 Video Thumbnail">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <svg class="w-20 h-20 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] group-hover:scale-125 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="space-y-1">
+                            <span class="text-teal-600 font-bold text-[10px] tracking-widest uppercase block">Project Phase I — Core Application Layout</span>
+                            <h3 class="text-3xl font-semibold text-slate-900 tracking-tight">MediKita: MVP Foundation</h3>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            <strong>Problem Statement:</strong> Patients and elderly individuals frequently struggle to manage their multiple medical appointments and daily medicine schedules due to fragmented tracking methods like paper notes. MediKita addresses this by providing a unified, localized mobile dashboard that organizes upcoming healthcare appointments and medication routines into a highly structured, intuitive user interface.
+                        </p>
+                        <div class="flex flex-wrap gap-2 text-[10px] font-bold uppercase tracking-wider text-teal-600">
+                            <span class="px-3 py-1.5 bg-teal-50 rounded-lg border border-teal-200">Jetpack Compose</span>
+                            <span class="px-3 py-1.5 bg-teal-50 rounded-lg border border-teal-200">State Hosting</span>
+                            <span class="px-3 py-1.5 bg-teal-50 rounded-lg border border-teal-200">NavHost Routing</span>
+                        </div>
+                        <div class="pt-2">
+                            <a href="https://github.com/nurillyabatrisha/A211095_DR.NAZATUL_PROJECT1_" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-8 py-3.5 rounded-xl font-bold text-xs tracking-widest uppercase hover:opacity-90 transition-all shadow-[0_0_15px_rgba(20,184,166,0.4)]">
+                                📂 View Code Repository
+                            </a>
+                        </div>
+                        <div class="p-5 bg-teal-50/50 rounded-2xl text-xs text-teal-950 italic border-l-2 border-teal-500 shadow-inner">
+                            <strong>Lessons Learned:</strong> I learned how to scale a multi-screen application by establishing a robust navigation framework (NavHost) capable of passing persistent data securely between UI components. Developing this phase also deepened my understanding of state hoist routing, custom Material 3 styling components, and UI responsiveness across varying Android screen sizes.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="searchable-item grid lg:grid-cols-12 gap-12 items-center bg-gradient-to-br from-teal-900 to-emerald-950 p-10 md:p-12 rounded-[2.5rem] text-white shadow-[0_20px_50px_rgba(20,184,166,0.25)] border border-teal-700">
+                    <div class="lg:col-span-6 lg:order-2">
+                        <a href="https://youtu.be/JMYncHT3pkg" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-500/50 hover:border-teal-300 hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] transition-all duration-300">
+                            <img src="https://img.youtube.com/vi/JMYncHT3pkg/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/JMYncHT3pkg/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Project 2 Video Thumbnail">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <svg class="w-20 h-20 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] group-hover:scale-125 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-6 lg:order-1 space-y-6">
+                        <div class="space-y-1">
+                            <span class="text-teal-400 font-bold text-[10px] tracking-widest uppercase block">Project Phase II — Connected Device Layer</span>
+                            <h3 class="text-3xl font-semibold text-white tracking-tight">MediKita: Cloud Sync & Hardware Sensors</h3>
+                        </div>
+                        <p class="text-sm text-teal-100/70 leading-relaxed">
+                            <strong>Problem Statement:</strong> Effective personal health management requires real-time data monitoring and cross-device availability, which simple localized apps cannot provide. MediKita solves this by integrating web APIs for live medical resource lookups, device sensors and secure cloud databases to guarantee that vital patient information is synchronized safely and available anywhere, anytime.
+                        </p>
+                        
+                        <div class="grid grid-cols-3 gap-3 text-center text-teal-100">
+                            <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                                <span class="block text-teal-300 font-bold text-xs">Room DB</span>
+                                <span class="text-[9px] text-teal-200/50">Local Offline Cache</span>
+                            </div>
+                            <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                                <span class="block text-teal-300 font-bold text-xs">Retrofit REST</span>
+                                <span class="text-[9px] text-teal-200/50">Asynchronous API</span>
+                            </div>
+                            <div class="bg-white/10 p-3 rounded-xl border border-white/10">
+                                <span class="block text-teal-300 font-bold text-xs">Hardware S.</span>
+                                <span class="text-[9px] text-teal-200/50">Realtime Logging</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="https://github.com/nurillyabatrisha/A211095_ILLYA_DRNAZATUL_PROJECT22" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-teal-400 to-cyan-400 text-slate-950 px-8 py-3.5 rounded-xl font-extrabold text-xs tracking-widest uppercase hover:opacity-90 transition-all shadow-[0_0_20px_rgba(20,184,166,0.5)]">
+                                📂 View Code Repository
+                            </a>
+                        </div>
+                        <div class="p-5 bg-white/5 rounded-2xl text-xs text-teal-200 italic border-l-2 border-teal-400">
+                            <strong>Lessons Learned:</strong> This project taught me how to architect a complex Android ecosystem handling concurrent asynchronous tasks using Kotlin Coroutines and Retrofit for API data fetching. I also gained invaluable hands-on experience handling Android hardware sensor frameworks and configuring cloud databases (such as Firebase Firestore), bridging local data workflows smoothly with remote backends.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflection Section -->
+    <section id="reflection" class="py-32 px-8 relative z-10">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-teal-600 text-xs font-bold tracking-[0.3em] uppercase block">Synthesized Summary</span>
+                <h2 class="text-3xl font-normal text-slate-900 tracking-tight serif-heading italic">Learning Journey Epilogue</h2>
+            </div>
+            <div class="p-8 md:p-12 bg-white rounded-[2.5rem] border border-teal-100 text-base md:text-lg text-slate-600 leading-relaxed font-normal space-y-6 shadow-xl">
+                <p>
+                    Over the course of developing MediKita from Lab 1 to Project 2, my skills evolved from designing basic layouts to architecting a complete, data-driven mobile ecosystem. Navigating through the implementation of reactive UI, complex navigation architectures, and local Room databases completely redefined my understanding of the Android lifecycle.
+                </p>
+                <p>
+                    Integrating advanced capabilities like asynchronous web APIs, hardware sensor frameworks, and remote cloud infrastructure challenged me to think like an enterprise-level software engineer. Ultimately, this journey has not only made me proficient in Jetpack Compose and modern Kotlin practices, but it has also proven how digital technology can be leveraged to create impactful healthcare solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-8 bg-white border-t border-slate-100 relative z-10">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <h4 class="font-bold text-center text-teal-600 text-[10px] uppercase tracking-[0.3em] neon-glow-teal">Core Native Competencies</h4>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Kotlin</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Jetpack Compose</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Android Architecture Components</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Room Database</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">SQLite</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Retrofit (REST APIs)</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Firebase Firestore</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Firebase Authentication</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Android Sensor Framework</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Kotlin Coroutines</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Material Design 3 (M3)</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">NavHost & NavController</span>
+                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Git & GitHub</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-24 px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <h3 class="text-xl font-semibold text-slate-950 tracking-tight neon-glow-teal">System Dependencies & Credits</h3>
+            <div class="p-8 bg-white border border-teal-100 rounded-[2rem] text-left space-y-4 shadow-md">
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    <strong>Libraries & APIs:</strong> Android Jetpack Libraries (Compose UI, Foundation, Material 3, ViewModel, Lifecycle, Navigation-Compose), Room Persistence Library, Retrofit HTTP Client, OkHttp Logging Interceptor, Firebase Android SDK (Firestore, Auth), Android Hardware Sensor APIs, Kotlin Coroutines, Google Fonts.
+                </p>
+                <div class="w-full h-px bg-slate-100 my-2"></div>
+                <p class="text-xs text-teal-600/70 italic leading-relaxed">
+                    <strong>AI Verification Acknowledgement:</strong> Developed with structural schema, deployment layout consulting, and code clearings generated through conversational workflows via Gemini AI.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elegant Cyber Footer -->
+    <footer class="bg-teal-950 text-white pt-24 pb-12 px-8 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col items-center space-y-8">
+            <div class="text-center space-y-2">
+                <h4 class="text-lg font-medium tracking-wider uppercase text-white">NURILLYA BATRISHA BINTI AHMAD YUSOF</h4>
+                <p class="text-teal-300 text-xs tracking-[0.3em] font-semibold uppercase">Matric: A211095 • INFORMATION TECHNOLOGY • Instructor: DR. NAZATUL AINI BINTI ABD MAJID</p>
+            </div>
+            
+            <div class="w-full h-px bg-white/10"></div>
+            
+            <div class="flex flex-col sm:flex-row justify-between w-full text-teal-400/50 text-[10px] font-bold tracking-widest uppercase gap-4">
+                <p>© 2026 Mobile Programming TK2323 System Portfolio</p>
+                <p>Guided Under Course Instructors</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
