@@ -151,18 +151,15 @@
 </head>
 <body class="text-slate-800 antialiased relative">
 
-    <!-- Background Decorators -->
     <div class="absolute top-20 left-10 w-96 h-96 ambient-glow-1 rounded-full pointer-events-none z-0"></div>
     <div class="absolute top-1/2 right-10 w-[500px] h-[500px] ambient-glow-2 rounded-full pointer-events-none z-0"></div>
 
-    <!-- Heartbeat Dynamic SVG Wave Overlay -->
     <div class="absolute top-0 right-0 left-0 h-48 opacity-20 pointer-events-none z-0 overflow-hidden">
         <svg class="w-full h-full" viewBox="0 0 1400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path class="ecg-line" d="M0 100 L500 100 L515 80 L525 120 L535 40 L550 160 L560 100 L575 110 L585 100 L1400 100" stroke="#14b8a6" stroke-width="3" stroke-linecap="round"/>
         </svg>
     </div>
 
-    <!-- Navigation Bar -->
     <nav class="nav-cheerful fixed top-0 w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-auto sm:h-24 py-4 sm:py-0 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3 shrink-0">
@@ -172,7 +169,6 @@
                 </span>
             </div>
             
-            <!-- Highly Clickable, Always Visible Navigation Links matching reference image -->
             <div class="flex items-center w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0 hide-scrollbar">
                 <div class="flex gap-5 sm:gap-8 lg:gap-12 text-[12px] sm:text-[14px] font-extrabold uppercase tracking-widest text-slate-900 mx-auto sm:mx-0 whitespace-nowrap">
                     <a href="#home" class="py-2 px-1 hover:text-teal-600 transition-colors cursor-pointer">Home</a>
@@ -186,11 +182,9 @@
         </div>
     </nav>
 
-    <!-- Header / Hero Section -->
     <header id="home" class="pt-48 pb-32 px-8 relative overflow-hidden z-10">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
             
-            <!-- Left Info Panel -->
             <div class="lg:col-span-7 space-y-8">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-50 text-teal-800 text-[10px] font-bold tracking-widest uppercase border border-teal-100 shadow-[0_0_15px_rgba(20,184,166,0.15)] animate-bounce">
                     ✨ TM2213 • Mobile Application Programming
@@ -205,7 +199,6 @@
                     MediKita is a smart healthcare companion application developed independently to bridge the gap between patient medication adherence, emergency medical access, and peer support. Built using modern Android architecture, the app integrates local data persistence, real-time cloud computing, and physical hardware sensors to deliver a reliable, seamless medical ecosystem on a single mobile device. It is designed to empower users to take control of their health journeys while simplifying communication with localized healthcare providers and communities.
                 </p>
 
-                <!-- Academic Metadata Grid -->
                 <div class="grid sm:grid-cols-3 gap-4 pt-2">
                     <div class="p-5 bg-white rounded-2xl border border-teal-100 shadow-sm transition-all hover:scale-105">
                         <span class="block text-[9px] font-bold text-teal-600 uppercase tracking-widest mb-1">Matric Registration</span>
@@ -221,7 +214,6 @@
                     </div>
                 </div>
 
-                <!-- SDG Commitment Frame with Neon Outline -->
                 <div class="p-6 bg-gradient-to-r from-teal-50 to-teal-100/50 text-teal-950 rounded-3xl flex items-start gap-5 shadow-[0_0_20px_rgba(20,184,166,0.15)] border border-teal-300">
                     <span class="text-3xl animate-pulse">❤️</span>
                     <div class="space-y-1">
@@ -233,16 +225,12 @@
                 </div>
             </div>
 
-            <!-- Right Profile Photo Canvas -->
             <div class="lg:col-span-5 flex justify-center items-center relative">
-                <!-- Outer Aesthetic HUD Ring -->
                 <div class="absolute w-80 h-80 border-2 border-dashed border-teal-400/30 rounded-full animate-[spin_40s_linear_infinite]"></div>
                 <div class="absolute w-88 h-88 border border-double border-pink-400/20 rounded-full animate-[spin_60s_linear_infinite]"></div>
                 
-                <!-- Masked Wave Frame for Picture -->
                 <div class="relative w-72 h-96 bg-gradient-to-tr from-teal-50 to-purple-50 shadow-2xl overflow-hidden avatar-cheerful-frame border-[12px] border-white">
                     <img src="illya.jpg.jpeg" class="w-full h-full object-cover object-center" style="object-position: center 20%;" alt="Nurillya Batrisha" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <!-- Elegant Fallback Illustration if local img is missing initially -->
                     <div class="absolute inset-0 flex flex-col items-center justify-center bg-teal-50 text-teal-600 hidden">
                         <span class="text-5xl mb-2">👩‍💻</span>
                         <span class="text-xs font-semibold tracking-wider uppercase">Photo Placeholder</span>
@@ -254,7 +242,6 @@
         </div>
     </header>
 
-    <!-- Labs Section -->
     <section id="labs" class="py-32 border-y border-slate-100 bg-white px-8 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="mb-20 space-y-2">
@@ -262,14 +249,12 @@
                 <h2 class="text-4xl font-normal text-slate-900 tracking-tight serif-heading italic">Modular Development Logs</h2>
             </div>
 
-            <!-- "No search results" feedback label -->
             <div id="labs-no-results" class="hidden text-center py-12 bg-teal-50/20 border border-dashed border-teal-200 rounded-3xl max-w-lg mx-auto">
                 <span class="text-3xl">🔍</span>
                 <p class="mt-2 text-sm font-semibold text-slate-500">No laboratory milestones match your query.</p>
             </div>
 
             <div id="labs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Lab 1 -->
                 <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
                     <a href="https://youtu.be/VBT-R0lOq8M" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
                         <img src="https://img.youtube.com/vi/VBT-R0lOq8M/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/VBT-R0lOq8M/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 1 Video Thumbnail">
@@ -289,7 +274,6 @@
                     </div>
                 </div>
 
-                <!-- Lab 2 -->
                 <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
                     <a href="https://youtu.be/UY7NxuOAV1g" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
                         <img src="https://img.youtube.com/vi/UY7NxuOAV1g/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/UY7NxuOAV1g/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 2 Video Thumbnail">
@@ -309,7 +293,6 @@
                     </div>
                 </div>
 
-                <!-- Lab 3 -->
                 <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
                     <a href="https://youtu.be/X-PWPv2SKFg" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
                         <img src="https://img.youtube.com/vi/X-PWPv2SKFg/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/X-PWPv2SKFg/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 3 Video Thumbnail">
@@ -329,7 +312,6 @@
                     </div>
                 </div>
 
-                <!-- Lab 4 -->
                 <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
                     <a href="https://youtu.be/A0mB-LODLVs" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
                         <img src="https://img.youtube.com/vi/A0mB-LODLVs/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/A0mB-LODLVs/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 4 Video Thumbnail">
@@ -349,7 +331,6 @@
                     </div>
                 </div>
 
-                <!-- Lab 5 -->
                 <div class="glow-card searchable-item rounded-[2.5rem] p-6 space-y-6">
                     <a href="https://youtu.be/mFVn26Z94yo" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
                         <img src="https://img.youtube.com/vi/mFVn26Z94yo/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/mFVn26Z94yo/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Lab 5 Video Thumbnail">
@@ -372,7 +353,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="py-32 px-8 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="mb-24 text-center space-y-2">
@@ -380,14 +360,12 @@
                 <h2 class="text-4xl font-normal text-slate-900 tracking-tight serif-heading italic">MediKita System Milestones</h2>
             </div>
 
-            <!-- "No search results" feedback label -->
             <div id="projects-no-results" class="hidden text-center py-12 bg-teal-50/20 border border-dashed border-teal-200 rounded-3xl max-w-lg mx-auto mb-8">
                 <span class="text-3xl">🔍</span>
                 <p class="mt-2 text-sm font-semibold text-slate-500">No project implementations match your query.</p>
             </div>
 
             <div id="projects-container" class="space-y-16">
-                <!-- Project 1 -->
                 <div class="searchable-item grid lg:grid-cols-12 gap-12 items-center bg-white p-10 md:p-12 rounded-[2.5rem] border border-teal-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(20,184,166,0.15)] transition-all duration-500">
                     <div class="lg:col-span-6">
                         <a href="https://youtu.be/Q3EZ492OPew" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-100/50 hover:border-teal-400 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all duration-300">
@@ -423,11 +401,10 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="searchable-item grid lg:grid-cols-12 gap-12 items-center bg-gradient-to-br from-teal-900 to-emerald-950 p-10 md:p-12 rounded-[2.5rem] text-white shadow-[0_20px_50px_rgba(20,184,166,0.25)] border border-teal-700">
                     <div class="lg:col-span-6 lg:order-2">
-                        <a href="https://youtu.be/JMYncHT3pkg" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-500/50 hover:border-teal-300 hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] transition-all duration-300">
-                            <img src="https://img.youtube.com/vi/JMYncHT3pkg/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/JMYncHT3pkg/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Project 2 Video Thumbnail">
+                        <a href="https://youtu.be/ACpjrqZJCGA" target="_blank" class="block relative w-full pt-[56.25%] rounded-[1.5rem] overflow-hidden bg-slate-900 group border-2 border-teal-500/50 hover:border-teal-300 hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] transition-all duration-300">
+                            <img src="https://img.youtube.com/vi/ACpjrqZJCGA/maxresdefault.jpg" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/ACpjrqZJCGA/hqdefault.jpg';" class="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" alt="Project 2 Video Thumbnail">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <svg class="w-20 h-20 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.6)] group-hover:scale-125 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M8 5v14l11-7z"/>
@@ -440,110 +417,14 @@
                             <span class="text-teal-400 font-bold text-[10px] tracking-widest uppercase block">Project Phase II — Connected Device Layer</span>
                             <h3 class="text-3xl font-semibold text-white tracking-tight">MediKita: Cloud Sync & Hardware Sensors</h3>
                         </div>
-                        <p class="text-sm text-teal-100/70 leading-relaxed">
-                            <strong>Problem Statement:</strong> Effective personal health management requires real-time data monitoring and cross-device availability, which simple localized apps cannot provide. MediKita solves this by integrating web APIs for live medical resource lookups, device sensors and secure cloud databases to guarantee that vital patient information is synchronized safely and available anywhere, anytime.
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Integrated physical components and Firebase real-time infrastructure into the platform, completing the cloud synchronization loop and hardware sensor triggers.
                         </p>
-                        
-                        <div class="grid grid-cols-3 gap-3 text-center text-teal-100">
-                            <div class="bg-white/10 p-3 rounded-xl border border-white/10">
-                                <span class="block text-teal-300 font-bold text-xs">Room DB</span>
-                                <span class="text-[9px] text-teal-200/50">Local Offline Cache</span>
-                            </div>
-                            <div class="bg-white/10 p-3 rounded-xl border border-white/10">
-                                <span class="block text-teal-300 font-bold text-xs">Retrofit REST</span>
-                                <span class="text-[9px] text-teal-200/50">Asynchronous API</span>
-                            </div>
-                            <div class="bg-white/10 p-3 rounded-xl border border-white/10">
-                                <span class="block text-teal-300 font-bold text-xs">Hardware S.</span>
-                                <span class="text-[9px] text-teal-200/50">Realtime Logging</span>
-                            </div>
-                        </div>
-
-                        <div class="pt-2">
-                            <a href="https://github.com/nurillyabatrisha/A211095_ILLYA_DRNAZATUL_PROJECT22" target="_blank" class="inline-flex items-center gap-3 bg-gradient-to-r from-teal-400 to-cyan-400 text-slate-950 px-8 py-3.5 rounded-xl font-extrabold text-xs tracking-widest uppercase hover:opacity-90 transition-all shadow-[0_0_20px_rgba(20,184,166,0.5)]">
-                                📂 View Code Repository
-                            </a>
-                        </div>
-                        <div class="p-5 bg-white/5 rounded-2xl text-xs text-teal-200 italic border-l-2 border-teal-400">
-                            <strong>Lessons Learned:</strong> This project taught me how to architect a complex Android ecosystem handling concurrent asynchronous tasks using Kotlin Coroutines and Retrofit for API data fetching. I also gained invaluable hands-on experience handling Android hardware sensor frameworks and configuring cloud databases (such as Firebase Firestore), bridging local data workflows smoothly with remote backends.
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reflection Section -->
-    <section id="reflection" class="py-32 px-8 relative z-10">
-        <div class="max-w-4xl mx-auto space-y-8">
-            <div class="text-center space-y-2">
-                <span class="text-teal-600 text-xs font-bold tracking-[0.3em] uppercase block">Synthesized Summary</span>
-                <h2 class="text-3xl font-normal text-slate-900 tracking-tight serif-heading italic">Learning Journey Epilogue</h2>
-            </div>
-            <div class="p-8 md:p-12 bg-white rounded-[2.5rem] border border-teal-100 text-base md:text-lg text-slate-600 leading-relaxed font-normal space-y-6 shadow-xl">
-                <p>
-                    Over the course of developing MediKita from Lab 1 to Project 2, my skills evolved from designing basic layouts to architecting a complete, data-driven mobile ecosystem. Navigating through the implementation of reactive UI, complex navigation architectures, and local Room databases completely redefined my understanding of the Android lifecycle.
-                </p>
-                <p>
-                    Integrating advanced capabilities like asynchronous web APIs, hardware sensor frameworks, and remote cloud infrastructure challenged me to think like an enterprise-level software engineer. Ultimately, this journey has not only made me proficient in Jetpack Compose and modern Kotlin practices, but it has also proven how digital technology can be leveraged to create impactful healthcare solutions.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-24 px-8 bg-white border-t border-slate-100 relative z-10">
-        <div class="max-w-5xl mx-auto space-y-12">
-            <h4 class="font-bold text-center text-teal-600 text-[10px] uppercase tracking-[0.3em] neon-glow-teal">Core Native Competencies</h4>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Kotlin</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Jetpack Compose</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Android Architecture Components</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Room Database</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">SQLite</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Retrofit (REST APIs)</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Firebase Firestore</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Firebase Authentication</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Android Sensor Framework</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Kotlin Coroutines</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Material Design 3 (M3)</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">NavHost & NavController</span>
-                <span class="px-5 py-2.5 bg-teal-50/50 border border-teal-200 text-teal-800 rounded-xl text-xs font-medium shadow-[0_0_10px_rgba(20,184,166,0.05)] hover:border-teal-500 hover:text-teal-950 hover:shadow-[0_0_15px_rgba(20,184,166,0.2)] transition-all cursor-default">Git & GitHub</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="py-24 px-8 relative z-10">
-        <div class="max-w-4xl mx-auto text-center space-y-8">
-            <h3 class="text-xl font-semibold text-slate-950 tracking-tight neon-glow-teal">System Dependencies & Credits</h3>
-            <div class="p-8 bg-white border border-teal-100 rounded-[2rem] text-left space-y-4 shadow-md">
-                <p class="text-xs text-slate-500 leading-relaxed">
-                    <strong>Libraries & APIs:</strong> Android Jetpack Libraries (Compose UI, Foundation, Material 3, ViewModel, Lifecycle, Navigation-Compose), Room Persistence Library, Firebase Android SDK (Firestore, Auth), Android Hardware Sensor APIs, Google Fonts.
-                </p>
-                <div class="w-full h-px bg-slate-100 my-2"></div>
-                <p class="text-xs text-teal-600/70 italic leading-relaxed">
-                    <strong>AI Verification Acknowledgement:</strong> AI utilities served as educational resources to grasp programming fundamentals, detect syntax flaws, refine interfaces, and facilitate troubleshooting throughout the development cycle.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Elegant Cyber Footer -->
-    <footer class="bg-teal-950 text-white pt-24 pb-12 px-8 relative z-10">
-        <div class="max-w-7xl mx-auto flex flex-col items-center space-y-8">
-            <div class="text-center space-y-2">
-                <h4 class="text-lg font-medium tracking-wider uppercase text-white">NURILLYA BATRISHA BINTI AHMAD YUSOF</h4>
-                <p class="text-teal-300 text-xs tracking-[0.3em] font-semibold uppercase">Matric: A211095 • INFORMATION TECHNOLOGY • Instructor: DR. NAZATUL AINI BINTI ABD MAJID</p>
-            </div>
-            
-            <div class="w-full h-px bg-white/10"></div>
-            
-            <div class="flex flex-col sm:flex-row justify-between w-full text-teal-400/50 text-[10px] font-bold tracking-widest uppercase gap-4">
-                <p>© 2026 Mobile Application Programming TM2213 System Portfolio</p>
-                <p>Guided Under Course Instructors</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
